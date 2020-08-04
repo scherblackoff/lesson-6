@@ -3,10 +3,8 @@ package java3;
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = {4,3,3,3,5,6,5};
-        giveAfterFour(arr);
     }
-    public static void giveAfterFour(int[] arr){
+    public int[] doAfterFour(int[] arr){
         int last = 0;
             for (int i = arr.length-1; i > -1; i--) {
                 if (arr[i] == 4) {
@@ -24,5 +22,26 @@ public class Main {
         for (int i = 0; i < currentArr.length; i++) {
             System.out.print(currentArr[i] + " ");
         }
+        return currentArr;
+    }
+    public static boolean isOneAndFour(int[] arr) {
+        boolean haveOne = false;
+        boolean haveFour = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 4) {
+                haveFour = true;
+                continue;
+            }
+            if (arr[i] == 1) {
+                haveOne = true;
+                continue;
+            }else {
+                return false;
+            }
+        }
+        if (haveFour == true && haveOne == true) {
+            return true;
+        }
+        return false;
     }
 }
